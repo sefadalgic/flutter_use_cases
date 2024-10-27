@@ -1,4 +1,4 @@
-import 'package:advance_flutter/custom_form_field/custom_form_view.dart';
+import 'package:advance_flutter/custom_loading_view/custom_loading_view.dart';
 import 'package:flutter/material.dart';
 
 void main() => runApp(const MyApp());
@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.dark(),
-      title: 'Material App',
-      home: const CustomTextField(),
+      debugShowCheckedModeBanner: false,
+      title: 'Flutter Use Cases',
+      home: const CustomLoadingView(),
     );
   }
 }
