@@ -36,6 +36,12 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   kartal: ^4.1.0
+  firebase_database: ^11.3.5
+  firebase_core: ^3.13.0
+  dio: ^5.8.0+1
+  build_runner: ^2.4.15
+  mobx: ^2.5.0
+  mobx_codegen: ^2.7.0
 
 dev_dependencies:
   flutter_test:

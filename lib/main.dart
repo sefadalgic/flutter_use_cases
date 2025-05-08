@@ -1,7 +1,20 @@
-import 'package:advance_flutter/custom_loading_view/custom_loading_view.dart';
+import 'package:advance_flutter/dio_usage/feature/character/characters_view.dart';
+import 'package:advance_flutter/firebase_options.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(const MyApp());
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // // Zaten başlatıldıysa tekrar başlatma
+  // if (Firebase.apps.isEmpty) {
+  //   await Firebase.initializeApp(
+  //     options: DefaultFirebaseOptions.currentPlatform,
+  //   );
+  // }
+
+  runApp(const MyApp());
+}
 
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
@@ -12,7 +25,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Use Cases',
-      home: const CustomLoadingView(),
+      home: const CharactersView(),
     );
   }
 }
