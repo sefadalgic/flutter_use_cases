@@ -23,7 +23,22 @@ class CharacterServiceImpl extends CharacterService {
       final List data = response.data;
       return data.map((e) => CharacterModel.fromJson(e)).toList();
     } on DioException catch (e) {
-      throw Exception(e);
+      throw Exception(_handleDioError(e));
+    }
+  }
+
+  String _handleDioError(DioException error) {
+    switch (error.type) {
+      case DioExceptionType.connectionTimeout:
+        return "Sunucuya bağlanılamadı.";
+      case DioExceptionType.receiveTimeout:
+        return "Sunucudan yanıt alınamadı.";
+      case DioExceptionType.badResponse:
+        return "Hatalı yanıt alındı: ${error.response?.statusCode}";
+      case DioExceptionType.unknown:
+        return "İnternet bağlantınızı kontrol edin.";
+      default:
+        return "Bir hata oluştu.";
     }
   }
 }
