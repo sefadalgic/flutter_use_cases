@@ -1,6 +1,4 @@
-import 'package:advance_flutter/dio_usage/feature/character/characters_view.dart';
-import 'package:advance_flutter/firebase_options.dart';
-import 'package:firebase_core/firebase_core.dart';
+import 'package:advance_flutter/bloc_state_management/custom_cubit_view.dart';
 import 'package:flutter/material.dart';
 
 Future<void> main() async {
@@ -25,7 +23,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData.dark(),
       debugShowCheckedModeBanner: false,
       title: 'Flutter Use Cases',
-      home: const CharactersView(),
+      home: const CustomCubitView(),
     );
   }
 }
